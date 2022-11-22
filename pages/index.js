@@ -5,10 +5,8 @@ import Footer from '@components/Footer'
 export default function Home() {
   return (
 <body>
-<script
-            dangerouslySetInnerHTML={{
-              __html: `
-                 !function (f, b, e, v, n, t, s) {
+<Script  id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
+    !function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
             n.callMethod ?
@@ -148,9 +146,8 @@ export default function Home() {
             console.log('[params rewriting] ERROR', e)
         }
     }())
-     `,
-            }}
-          />
+</Script>
+ 
  
   <div id="icax">
     <div class="container mx-auto px-8 py-4 my-3">
