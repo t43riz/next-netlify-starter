@@ -44,61 +44,9 @@
                             url + (url.indexOf("?") !== -1 ? "&" : "?") + params.substr(1);
                     };
  
-                    var leadFormComponents = document.querySelectorAll("[data-controller=lead-forms--component]");
+                   
                     var pageLinks = document.querySelectorAll("a");
-                    var forms = document.querySelectorAll("form");
-                    var answers = document.querySelectorAll(".button.answer[onclick]")
-                    var redirectableEl = document.querySelectorAll("[data-redirect]");
-                    var newTabRedirectableEl = document.querySelectorAll("[data-new-tab-redirect]");
- 
- 
-                    console.log('leadFormComponents', leadFormComponents)
-                    console.log('forms', forms)
-                    window.addEventListener('DOMContentLoaded', (event) => {
-                        console.log('DOM fully loaded and parsed');
-                        console.log("dom ready leadform", document.querySelectorAll("[data-controller=lead-forms--component]"))
-                    });
-                    Array.from(leadFormComponents).forEach(leadFormComponent => {
-                        var submitRedirectAttr = 'data-lead-forms--component-submit-redirect-url-value'
-                        var popupRedirectAttr = 'data-lead-forms--component-submit-popup-url-value'
-                        var redirectLink = leadFormComponent.getAttribute(submitRedirectAttr)
-                        var popupRedirect = leadFormComponent.getAttribute(popupRedirectAttr)
-                        if (redirectLink) leadFormComponent.setAttribute(submitRedirectAttr, addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                        if (popupRedirect) leadFormComponent.setAttribute(popupRedirectAttr, addParamsToUrl(popupRedirect)("&sub5=" + uuid));
-                    })
-                    Array.from(forms).forEach(form => {
-                        var redirect_link = form.getAttribute('redirect_link')
-                        var new_tab_redirect_link = form.getAttribute('new_tab_redirect_link')
-                        if (redirect_link) form.setAttribute('redirect_link', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                        if (new_tab_redirect_link) form.setAttribute('new_tab_redirect_link', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(redirectableEl).forEach(form => {
-                        var redirect_link = form.getAttribute('data-redirect')
-                        if (redirect_link) form.setAttribute('data-redirect', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(newTabRedirectableEl).forEach(form => {
-                        var new_tab_redirect_link = form.getAttribute('data-new-tab-redirect')
-                        if (new_tab_redirect_link) form.setAttribute('data-new-tab-redirect', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    var extractUrlFromHandler = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.indexOf('https'), clickHandlerStr.lastIndexOf("'"));
-                    }
-                    var extractEverythingBeforeUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(0, clickHandlerStr.indexOf('https'))
-                    }
-                    var extractEverythingAfterUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.lastIndexOf("'"), clickHandlerStr.length)
-                    }
-                    var formatNewHandler = (oldHandlerStr, url) => {
-                        return `${extractEverythingBeforeUrl(oldHandlerStr)}${url}${extractEverythingAfterUrl(oldHandlerStr)}`
-                    }
-                    Array.from(answers).forEach(answer => {
-                        var clickHandlerStr = answer.getAttribute("onclick")
-                        if (extractUrlFromHandler(clickHandlerStr)) {
-                            parsedUrl = addParamsToUrl(extractUrlFromHandler(clickHandlerStr))("&sub5=" + uuid)
-                            answer.setAttribute('onclick', formatNewHandler(clickHandlerStr, parsedUrl))
-                        }
-                    })
+                   
                     Array.from(pageLinks).forEach(link => {
                         var href = link.href;
                         if (href) link.href = addParamsToUrl(href)("&sub5=" + uuid);
