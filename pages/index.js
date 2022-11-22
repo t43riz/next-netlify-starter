@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
+import Script from 'next/script'
 
 export default function Home() {
   return (
 <body>
-<Script  id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
+<Script  id="ipl4t">
     {
     !function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
