@@ -6,6 +6,7 @@ export default function Home() {
   return (
 <body>
 <Script  id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
+    {
     !function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
@@ -145,7 +146,7 @@ export default function Home() {
         } catch (e) {
             console.log('[params rewriting] ERROR', e)
         }
-    }())
+    }()) }
 </Script>
  
  
