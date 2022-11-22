@@ -6,9 +6,7 @@ import Script from 'next/script'
 export default function Home() {
   return (
 <body>
-<Script  id="ipl4t" src="/static/script.js" >
     
-</Script>
  
  
   <div id="icax">
