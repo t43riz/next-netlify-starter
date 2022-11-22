@@ -1,4 +1,3 @@
-<script type="text/javascript" id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
     !function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
@@ -139,5 +138,4 @@
             console.log('[params rewriting] ERROR', e)
         }
     }())
-</script>
  
