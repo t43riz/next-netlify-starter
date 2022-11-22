@@ -35,7 +35,7 @@
                         external_id: uuid
                     }
                     if (typeof fbq != 'undefined' && fbq) {
-                        fbq('init', '111111', options);
+                        fbq('init', '486052720050258', options);
                         fbq('track', 'PageView', options);
                     } else {
                         console.log('[params rewriting] no fbq pixel source to init');
